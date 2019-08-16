@@ -15,7 +15,7 @@ pipeline {
           echo 'This worked'
         }
         failure {
-            echo 'This didn't work'
+            echo 'This didnt work'
         }
         changed {
             echo "Change"
