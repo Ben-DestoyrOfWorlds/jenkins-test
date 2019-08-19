@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'python --version'
+                sh 'python --version && whoami'
 		sh 'pip --cache-dir /home/ubuntu/.cache install pytest'
                 sh 'pytest Docker/app.py'
             }
