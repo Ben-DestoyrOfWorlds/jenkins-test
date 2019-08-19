@@ -3,10 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'sudo apt-get update && apt-get upgrade -y'
-                sh 'sudo apt-get install python'
-                sh 'python --version && whoami'
-		sh 'pip --cache-dir /home/ubuntu/.cache install pytest'
+                sh 'python --version && pwd'
                 sh 'pytest Docker/app.py'
             }
         }
