@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh 'python --version && pwd'
                 sh 'pytest Docker/app.py'
+                sh 'pyflakes Docker/app.py'
             }
         }
     }
