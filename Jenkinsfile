@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'python --version && pwd'
-		sh 'cd Docker && pip install pytest'
+                sh 'python --version'
+		sh 'pip ----cache-dir ~/.cache install pytest'
                 sh 'pytest Docker/app.py'
             }
         }
