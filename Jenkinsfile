@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'python --version && pwd'
-                sh 'pytest Docker/app.py'
+                sh 'python --version && pwd && ls -la'
                 sh 'pyflakes Docker/app.py'
             }
         }
