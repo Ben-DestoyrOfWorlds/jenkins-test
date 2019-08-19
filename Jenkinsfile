@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'python --version'
+                sh 'python --version && pwd'
 		sh 'cd Docker && pip install pytest'
                 sh 'pytest Docker/app.py'
             }
