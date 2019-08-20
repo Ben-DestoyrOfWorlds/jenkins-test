@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:2.7-slim
+FROM python:3.7.2
 
 # Set the working directory to /app
 WORKDIR /app
@@ -12,4 +12,10 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # Define environment variable
 ENV NAME jenkins-test
+
+# Make port 5000 available to the world outside this container
+EXPOSE 80 
+
+# Run app.py when the container launches
+CMD ["python", "app.py"]
 
