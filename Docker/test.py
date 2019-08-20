@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import unittest
 import app
+import os
 
 class TestHello(unittest.TestCase):
 
@@ -14,6 +15,7 @@ class TestHello(unittest.TestCase):
         self.assertEqual(rv.data, b'hi\n')
 
     def test_hello_hello(self):
+        name=os.getenv("NAME", "world")
         rv = self.app.get('/hello/')
         self.assertEqual(rv.status, '200 OK')
         self.assertEqual(rv.data, b'Hello {name}!\n')
