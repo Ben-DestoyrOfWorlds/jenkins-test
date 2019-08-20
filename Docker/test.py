@@ -18,7 +18,7 @@ class TestHello(unittest.TestCase):
         name=os.getenv("NAME", "world")
         rv = self.app.get('/hello/')
         self.assertEqual(rv.status, '200 OK')
-        self.assertEqual(rv.data, b"<h3>Hello {name}!</h3>")
+        self.assertEqual(rv.data, b"<h3>Hello " + name + "!</h3>")
 
     def test_hello_name(self):
         name = 'Simon'
