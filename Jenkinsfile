@@ -1,14 +1,9 @@
-pipeline {
-    agent { dockerfile true }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'python --version && pwd && ls -la'
-                sh 'pyflakes Docker/app.py'
-                sh 'echo tesssssssst'
-                sh 'python Docker/test.py'
-            }
-        }
+node {
+    stage('Initialize') {
+        sh 'ls -la'
+    }
+    stage('Test') {
+        sh 'echo test'   
     }
     post {
         always {
