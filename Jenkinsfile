@@ -1,8 +1,9 @@
 pipeline {
     agent none
+    node {
+    }
     stages {
-        node {
-            stage('Initialize') {
+      stage('Initialize') {
                 sh 'ls -la'
             }
             stage('Test') {
@@ -25,4 +26,3 @@ pipeline {
 
         }
     }
-}
