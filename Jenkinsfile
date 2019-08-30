@@ -5,6 +5,8 @@ node {
     stage('Test') {
         sh 'echo test'   
     }
+}
+pipeline {
     post {
         always {
             echo 'This ran'
