@@ -6,6 +6,7 @@ pipeline {
           sh 'ls -la'
           }
         }
+        stage('Test') {
         post {
             always {
                 echo 'This ran'
@@ -19,7 +20,7 @@ pipeline {
             changed {
                 echo "Change"
             }
-
+        }
         }
     }
 }
