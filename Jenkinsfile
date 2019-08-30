@@ -1,25 +1,28 @@
 pipeline {
-    agent any
-    node {
-        stage('Initialize') {
-            sh 'ls -la'
+    agent none
+    stages }
+        node {
+            stage('Initialize') {
+                sh 'ls -la'
+            }
+            stage('Test') {
+                sh 'echo test'   
+            }
         }
-        stage('Test') {
-            sh 'echo test'   
-        }
-    }
-    post {
-        always {
-            echo 'This ran'
-        }
-        success {
-          echo 'This worked'
-        }
-        failure {
-            echo 'This didnt work'
-        }
-        changed {
-            echo "Change"
+        post {
+            always {
+                echo 'This ran'
+            }
+            success {
+            echo 'This worked'
+            }
+            failure {
+                echo 'This didnt work'
+            }
+            changed {
+                echo "Change"
+            }
+
         }
     }
 }
