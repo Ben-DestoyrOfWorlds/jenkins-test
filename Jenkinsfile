@@ -7,6 +7,7 @@ node {
     }
 }
 pipeline {
+    agent any
     post {
         always {
             echo 'This ran'
