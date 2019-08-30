@@ -1,10 +1,12 @@
 pipeline {
     agent any
-    stage('Initialize') {
-        sh 'ls -la'
-    }
-    stage('Test') {
-        sh 'echo test'   
+    node {
+        stage('Initialize') {
+            sh 'ls -la'
+        }
+        stage('Test') {
+            sh 'echo test'   
+        }
     }
     post {
         always {
