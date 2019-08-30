@@ -1,14 +1,10 @@
 pipeline {
     agent none
-    node {
-    }
     stages {
       stage('Initialize') {
-                sh 'ls -la'
-            }
-            stage('Test') {
-                sh 'echo test'   
-            }
+          steps {
+          sh 'ls -la'
+          }
         }
         post {
             always {
@@ -26,3 +22,4 @@ pipeline {
 
         }
     }
+}
